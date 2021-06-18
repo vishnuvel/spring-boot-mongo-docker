@@ -4,20 +4,19 @@ services:
     image: vishnuvel/spring-boot-mongo:latest
     restart: always # This will be ignored if we deploy in docker swarm
     ports:
-      - 8080:8080
+    - 8080:8080
     working_dir: /opt/app
     depends_on:
-      - mongo
+    - mongo
     networks:
     - springappnetwork  
- mongo:
-   image: mongo
- 
-   volumes:
-     - mongodb:/data/db
-   restart: always
-   networks:
-   - springappnetwork  
+  mongo:
+    image: mongo 
+    volumes:
+    - mongodb:/data/db
+    restart: always
+    networks:
+    - springappnetwork
 volumes:
   mongodb:
     #external: true    
