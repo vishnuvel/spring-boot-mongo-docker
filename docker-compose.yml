@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   springboot:
-    image: vishnuvel/spring-boot-mongo:latest
+    image: vishnuvel/spring-boot-mongocomposefile:latest
     restart: always # This will be ignored if we deploy in docker swarm
     ports:
     - 8080:8080
